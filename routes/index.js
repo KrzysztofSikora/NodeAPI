@@ -8,13 +8,15 @@ app.use(bodyParser.json())
 
 
 
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
+
+router.get('/', function (req, res) {
+    res.sendfile('layouts/index.html')
+})
 
 
-router.use( require('../controllers/static'))
+router.get('/angul', function (req, res) {
+    res.sendfile('layouts/angul.html')
+})
 
 
 module.exports = router;
