@@ -13,4 +13,9 @@ router.get('/', function (req, res) {
 })
 
 
+router.get('/', function (req, res) {
+    res.sendfile('layouts/app.html')
+})
+
+
 module.exports = router
