@@ -11,12 +11,12 @@ app.use(bodyParser.json())
 
 router.get('/', function (req, res) {
     res.sendfile('layouts/index.html')
-})
+});
 
 
 router.get('/angul', function (req, res) {
     res.sendfile('layouts/angul.html')
-})
+});
 
 
 module.exports = router;
