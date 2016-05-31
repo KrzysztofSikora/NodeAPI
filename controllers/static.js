@@ -14,7 +14,7 @@ router.get('/', function (req, res) {
 
 
 router.get('/', function (req, res) {
-    res.sendfile('layouts/app.html')
+    res.sendfile('layouts/angul.html')
 })
 
 
