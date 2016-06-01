@@ -12,8 +12,10 @@
     "debug": "~2.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
+    "http": "0.0.0",
     "morgan": "~1.6.1",
     "nodemon": "~1.9.2",
+    "openweathermap": "^1.0.0",
     "serve-favicon": "~2.3.0"
   }
 }
