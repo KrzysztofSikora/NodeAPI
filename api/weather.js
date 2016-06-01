@@ -12,10 +12,13 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-router.get("/:id", function (req, res) {
+router.get("/:name", function (req, res) {
     "use strict";
     
-    openWeather.now({id:3101547 ,appid:"7626413626a82fc04fc9cd4ca52108a7"}, function(err, json){
+    // openWeather.now({id:3101547 ,appid:"7626413626a82fc04fc9cd4ca52108a7"}, function(err, json){
+    openWeather.now({q:req.params.name ,appid:"7626413626a82fc04fc9cd4ca52108a7"}, function(err, json){
+        json.main.temp_min = json.main.temp_min -272.15;
+        json.main.temp_max = json.main.temp_max -272.15;
         res.json(json)
     });
 

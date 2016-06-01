@@ -10,7 +10,7 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/partials/start.html",
             controller:"IndexController"
         })
-        .when('/check/:id', {
+        .when('/check/:name', {
             templateUrl: "/partials/result.html",
             controller: "WeatherResultController"
         })
@@ -23,7 +23,6 @@ app.config(["$routeProvider", function ($routeProvider) {
 app.controller("IndexController",["$scope",
 function($scope){
     "use strict";
-    $scope.zmienna = "kanapka";
 
 }]);
 
@@ -32,8 +31,9 @@ function($scope){
 app.controller("WeatherResultController", ["$scope","$resource","$routeParams",
     function ($scope,$resource,$routeParams) {
         "use strict";
-        var Weather = $resource("/check/:id",{id:"@_id"});
-        Weather.get({id:$routeParams.id},function(data){
+        console.log($scope.zmienna);
+        var Weather = $resource("/check/:name",{name:"@_name"});
+        Weather.get({name:$routeParams.name},function(data){
             $scope.weather = data;
         })
 
